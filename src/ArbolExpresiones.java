@@ -42,7 +42,7 @@ public class ArbolExpresiones {
 				w = w + 1;
 			}
 		}
-		
+
 		int v = 0;
 		for (int i = 0; i < pr.length; i++) {
 			if ((i >= x) && (i <= y)) {
@@ -50,13 +50,28 @@ public class ArbolExpresiones {
 				v = v + 1;
 			}
 		}
-		
-		int acum=0;
-		for(int i = 0; i< )
-		
-		
-		
-		
+
+		float acum = 0;
+		for (int i = 0; i <= v - 2; i++) {
+			if (i == 1 && ven[1] == "-")
+				acum = Integer.parseInt(ven[2]) * (-1);
+
+			if (i == 1 && ven[1] != "-")
+				acum = Integer.parseInt(ven[1]);
+
+			if (ven[i] == "+" && i != 1)
+				acum = acum + Integer.parseInt(ven[i + 1]);
+
+			if (ven[i] == "-" && i != 1)
+				acum = acum - Integer.parseInt(ven[i + 1]);
+
+			if (ven[i] == "*" && i != 1)
+				acum = acum * Integer.parseInt(ven[i + 1]);
+
+			if (ven[i] == "/" && i != 1)
+				acum = acum / Integer.parseInt(ven[i + 1]);
+
+		}
 
 	}
 
